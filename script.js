@@ -1,3 +1,5 @@
+//there is a space between each character in morse code, for a space between words, "/" is commonly used
+
 const morseCodeLetters = {
   A: ".-",
   B: "-...",
@@ -25,4 +27,26 @@ const morseCodeLetters = {
   X: "-..-",
   Y: "-.--",
   Z: "--..",
+};
+
+const morseCodeNumbers = {
+  one: ".----",
+  two: "..---",
+  three: "...--",
+  four: "....-",
+  five: ".....",
+  six: "-....",
+  seven: "--...",
+  eight: "---..",
+  nine: "----.",
+  zero: "-----",
+};
+
+const morseCodeSymbols = {
+  questionMark: "..--..",
+  exclamationMark: "-.-.--",
+  period: ".-.-.-",
+  comma: "--..--",
+  semiColon: "-.-.-.",
+  colon: "---...",
 };
