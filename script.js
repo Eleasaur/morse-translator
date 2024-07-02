@@ -54,7 +54,7 @@ for (const key in morseCodeLib) {
   }
 }
 
-console.log(reverseMorseCodeLib);
+// console.log(reverseMorseCodeLib);
 
 const translateTextToMorse = (input) => {
   const words = input.split(" ");
@@ -69,3 +69,21 @@ const translateTextToMorse = (input) => {
 };
 
 console.log(translateTextToMorse("hello there Obiwan"));
+
+const translateMorsetoText = (input) => {
+  const morseWords = input.split("/");
+  const translatedWords = morseWords.map((morseWord) => {
+    const morseChars = morseWord.split(" ");
+    const chars = morseChars.map((morseChar) => {
+      return reverseMorseCodeLib[morseChar] || morseChar;
+    });
+    return chars.join("");
+  });
+  return translatedWords.join(" ").toLowerCase();
+};
+
+// console.log(
+//   translateMorsetoText(
+//     ".... . .-.. .-.. ---/- .... . .-. ./--- -... .. .-- .- -."
+//   )
+// );
