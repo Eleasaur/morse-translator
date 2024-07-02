@@ -7,5 +7,30 @@
     <script src="./script.js"></script>
     <title>Morse Code Translator</title>
   </head>
-  <body></body>
+  <body>
+    <div class="translator">
+      <div class="translator_container">
+        <form class="translator_container_form">
+          <textarea
+            name="input"
+            id="input"
+            rows="5"
+            cols="50"
+            placeholder="enter text or morse here"
+          ></textarea>
+          <button class="translator_container_form_submit">Translate!</button>
+        </form>
+        <div class="translator_container_results">
+          <textarea
+            name="result"
+            id="result"
+            rows="5"
+            cols="50"
+            placeholder="translated text will appear here"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
