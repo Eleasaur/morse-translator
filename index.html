@@ -10,23 +10,53 @@
   <body>
     <div class="translator">
       <div class="translator_container">
-        <form class="translator_container_form">
+        <form class="translator_container_form translator_container_form--text">
           <textarea
-            name="input"
-            id="input"
+            name="inputText"
+            id="inputText"
             rows="5"
             cols="50"
-            placeholder="enter text or morse here"
+            placeholder="enter text here"
           ></textarea>
-          <button class="translator_container_form_submit">Translate!</button>
+          <button id="translateText" class="translator_container_form_submit">
+            Translate text!
+          </button>
         </form>
         <div class="translator_container_results">
           <textarea
-            name="result"
-            id="result"
+            name="resultMorse"
+            id="resultMorse"
+            type="text"
             rows="5"
             cols="50"
-            placeholder="translated text will appear here"
+            placeholder="morse code will appear here"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+      <div class="translator_container">
+        <form
+          class="translator_container_form translator_container_form--morse"
+        >
+          <textarea
+            name="inputMorse"
+            id="inputMorse"
+            type="text"
+            rows="5"
+            cols="50"
+            placeholder="enter morse here"
+          ></textarea>
+          <button id="translateMorse" class="translator_container_form_submit">
+            Translate morse!
+          </button>
+        </form>
+        <div class="translator_container_results">
+          <textarea
+            name="resultText"
+            id="resultText"
+            rows="5"
+            cols="50"
+            placeholder="text will appear here"
             readonly
           ></textarea>
         </div>
