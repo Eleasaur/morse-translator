@@ -68,7 +68,7 @@ const translateTextToMorse = (input) => {
   return translatedWords.join("/");
 };
 
-console.log(translateTextToMorse("hello there Obiwan"));
+// console.log(translateTextToMorse("hello there Obiwan"));
 
 const translateMorsetoText = (input) => {
   const morseWords = input.split("/");
@@ -82,8 +82,33 @@ const translateMorsetoText = (input) => {
   return translatedWords.join(" ").toLowerCase();
 };
 
-// console.log(
-//   translateMorsetoText(
-//     ".... . .-.. .-.. ---/- .... . .-. ./--- -... .. .-- .- -."
-//   )
-// );
+// console.log(translateMorsetoText(".... . .-.. .-.. ---/- .... . .-. ./"));
+
+const textInputForm = document.querySelector(
+  ".translator_container_form--text"
+);
+
+const morseInputForm = document.querySelector(
+  ".translator_container_form--morse"
+);
+
+textInputForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = document.querySelector("#inputText");
+  const inputValue = translateTextToMorse(input.value.trim());
+
+  input.value = "";
+
+  const morseOutput = document.querySelector(
+    ".translator_container_results-morse"
+  );
+
+  morseOutput.innerHTML = inputValue;
+
+  const nothingPara = document.querySelector("#nothingPara");
+  if (nothingPara) {
+    morseOutput.removeChild(nothingPara);
+  }
+});
+
+morseInputForm.addEventListener("submit", (e) => {});
