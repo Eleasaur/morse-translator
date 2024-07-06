@@ -105,10 +105,27 @@ textInputForm.addEventListener("submit", (e) => {
 
   morseOutput.innerHTML = inputValue;
 
-  const nothingPara = document.querySelector("#nothingPara");
+  const nothingPara = document.querySelector("#nothingParaMorse");
   if (nothingPara) {
     morseOutput.removeChild(nothingPara);
   }
 });
 
-morseInputForm.addEventListener("submit", (e) => {});
+morseInputForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = document.querySelector("#inputMorse");
+  const inputValue = translateMorsetoText(input.value.trim());
+
+  input.value = "";
+
+  const textOutput = document.querySelector(
+    ".translator_container_results-text"
+  );
+
+  textOutput.innerHTML = inputValue;
+
+  const nothingPara = document.querySelector("#nothingParaText");
+  if (nothingPara) {
+    morseOutput.removeChild(nothingPara);
+  }
+});
