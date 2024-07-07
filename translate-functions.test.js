@@ -8,6 +8,13 @@ describe("given a text string, it will be translated to morse", () => {
     expect(translateTextToMorse("hello there")).toBe(
       ".... . .-.. .-.. ---/- .... . .-. ."
     );
+    expect(
+      translateTextToMorse(
+        "abcdefghijklmnopqrstuvwxyz1234567890?!.,;:/()&=+-_$@"
+      )
+    ).toBe(
+      ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. .---- ..--- ...-- ....- ..... -.... --... ---.. ----. ----- ..--.. -.-.-- .-.-.- --..-- -.-.-. ---... -..-. -.--. -.--.- .-... -...- .-.-. -....- ..--.- ...-.. .--.-."
+    );
   });
   test("given no input, ask the user to input some text to translate.", () => {
     expect(translateTextToMorse("")).toBe(
@@ -24,6 +31,11 @@ describe("given a morse string, it will be translated to text", () => {
     expect(
       translateMorsetoText(".... . .-.. .-.. ---/.-- --- .-. .-.. -..")
     ).toBe("hello world");
+    expect(
+      translateMorsetoText(
+        ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. .---- ..--- ...-- ....- ..... -.... --... ---.. ----. ----- ..--.. -.-.-- .-.-.- --..-- -.-.-. ---... -..-. -.--. -.--.- .-... -...- .-.-. -....- ..--.- ...-.. .--.-."
+      )
+    ).toBe("abcdefghijklmnopqrstuvwxyz1234567890?!.,;:/()&=+-_$@");
   });
   test("given an invalid morse string, it will ask the user to enter valid morse.", () => {
     expect(translateMorsetoText("hello")).toBe(
