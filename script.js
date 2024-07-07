@@ -21,7 +21,7 @@ const morseInputForm = document.querySelector(
 textInputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const input = document.querySelector("#inputText");
-  const inputValue = translateTextToMorse(input.value.trim());
+  const inputValue = translateTextToMorse(input.value);
 
   input.value = "";
 
@@ -40,7 +40,7 @@ textInputForm.addEventListener("submit", (e) => {
 morseInputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const input = document.querySelector("#inputMorse");
-  const inputValue = translateMorsetoText(input.value.trim());
+  const inputValue = translateMorsetoText(input.value);
 
   input.value = "";
 

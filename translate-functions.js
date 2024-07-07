@@ -64,6 +64,7 @@ for (const key in morseCodeLib) {
 }
 
 export const translateTextToMorse = (input) => {
+  input = input.trim();
   if (input === "") {
     return "Please enter some text to translate.";
   }
@@ -79,6 +80,7 @@ export const translateTextToMorse = (input) => {
 };
 
 export const translateMorsetoText = (input) => {
+  input = input.trim();
   if (/[a-z\@\$\"\+\=\&\(\)\:\;\,\!\?\_]/gi.test(input)) {
     return "Please enter valid morse to translate.";
   }
