@@ -9,21 +9,28 @@
   </head>
   <body>
     <div class="translator">
+      <h1 class="translator_title">Morse code Translator</h1>
       <div class="translator_container">
         <form class="translator_container_form translator_container_form--text">
           <textarea
             name="inputText"
             id="inputText"
+            class="translator_container_form_textbox"
+            type="text"
             rows="5"
             cols="50"
             placeholder="enter text here"
           ></textarea>
           <button id="translateText" class="translator_container_form_submit">
-            Translate text!
+            Translate text
           </button>
         </form>
-        <div class="translator_container_results-morse">
-          <p id="nothingParaMorse">Morse code will appear here!</p>
+        <div
+          class="translator_container_results-morse translator_container_results"
+        >
+          <p id="nothingParaMorse" class="translator_container_results_output">
+            Morse code will appear here.
+          </p>
         </div>
       </div>
       <div class="translator_container">
@@ -33,17 +40,22 @@
           <textarea
             name="inputMorse"
             id="inputMorse"
+            class="translator_container_form_textbox"
             type="text"
             rows="5"
             cols="50"
-            placeholder="enter morse here (use '.' '-' '/')"
+            placeholder="enter morse here (use '.' , '-' , '/')"
           ></textarea>
           <button id="translateMorse" class="translator_container_form_submit">
-            Translate morse!
+            Translate morse
           </button>
         </form>
-        <div class="translator_container_results-text">
-          <p id="nothingParaText">Text will appear here!</p>
+        <div
+          class="translator_container_results-text translator_container_results"
+        >
+          <p id="nothingParaText" class="translator_container_results_output">
+            Text will appear here.
+          </p>
         </div>
       </div>
     </div>
