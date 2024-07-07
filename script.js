@@ -43,6 +43,17 @@ const morseCodeLib = {
   ",": "--..--",
   ";": "-.-.-.",
   ":": "---...",
+  "/": "_.._.",
+  "(": "_.__.",
+  ")": "_.__._",
+  "&": "._...",
+  "=": "_..._",
+  "+": "._._.",
+  "-": "_...._",
+  "_": "..__._",
+  '"': "._.._.",
+  "$": "..._.._",
+  "@": ".__._.",
 };
 // console.log(morseCodeLetters);
 
@@ -57,6 +68,9 @@ for (const key in morseCodeLib) {
 // console.log(reverseMorseCodeLib);
 
 const translateTextToMorse = (input) => {
+  if (input === "") {
+    return "Please enter some text to translate.";
+  }
   const words = input.split(" ");
   const translatedWords = words.map((word) => {
     const chars = word.toUpperCase().split("");
@@ -71,6 +85,12 @@ const translateTextToMorse = (input) => {
 // console.log(translateTextToMorse("hello there Obiwan"));
 
 const translateMorsetoText = (input) => {
+  if (/[a-z\@\$\"\+\=\&\(\)\:\;\,\!\?\-]/gi.test(input)) {
+    return "Please enter valid morse to translate.";
+  }
+  if (input === "") {
+    return "Please enter some morse to translate.";
+  }
   const morseWords = input.split("/");
   const translatedWords = morseWords.map((morseWord) => {
     const morseChars = morseWord.split(" ");
